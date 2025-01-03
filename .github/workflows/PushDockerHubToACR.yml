@@ -28,10 +28,10 @@ jobs:
           docker pull shivam0007/myspringbootapp:latest
     - name: Tag Docker image
       run: |
-          docker tag shivam0007/myspringbootapp:latest containeregistery.azurecr.io/myapp:latest
+          docker tag shivam0007/myspringbootapp:latest containeregistery.azurecr.io/sam:latest
     - name: Push Docker image to Azure Container Registry
       run: |
-          docker push containeregistery.azurecr.io/myapp:latest     
+          docker push containeregistery.azurecr.io/sam:latest     
 
           
  
