@@ -21,7 +21,7 @@ jobs:
         password: ${{ secrets.REGISTRY_PASSWORD }}
 
     - run: |
-       docker build DockerFileFolder/ -t ${{ secrets.ACR_LOGIN_SERVER }}/myapp:latest
+       docker build DockerFileFolder/ -t containeregistery.azurecr.io/myapp:latest
        docker push containeregistery.azurecr.io/myapp:latest
 
     
