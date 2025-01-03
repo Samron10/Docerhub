@@ -1,0 +1,37 @@
+name: Push Docker Image to ACR
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - uses: azure/docker-login@v2
+      with:
+        login-server: containeregistery.azurecr.io
+        username: ${{ secrets.REGISTRY_USERNAME }}
+        password: ${{ secrets.REGISTRY_PASSWORD }}
+
+    # - run: |
+    #    docker build DockerFileFolder/ -t containeregistery.azurecr.io/myapp:latest
+    #    docker push containeregistery.azurecr.io/myapp:latest
+    - name: Pull Docker image from Docker Hub
+      run: |
+          docker pull shivam0007/myspringbootapp:latest
+    - name: Tag Docker image
+      run: |
+          docker tag shivam0007/myspringbootapp:latest containeregistery.azurecr.io/myapp:latest
+    - name: Push Docker image to Azure Container Registry
+      run: |
+          docker push containeregistery.azurecr.io/myapp:latest     
+
+          
+ 
