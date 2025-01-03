@@ -22,17 +22,5 @@ jobs:
           push: true
           tags: shivam0007/myspringbootapp:latest
           
-      - name: Build and Deploy Container App
-        uses: azure/docker-login@v1
-        with:
-          login-server: containeregistery.azurecr.io
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
-
-      - name: Build and push Docker image
-        uses: docker/build-push-action@v4
-        with:
-          context: DockerFileFolder/
-          push: true
-          tags: containeregistery/myapp:1.0.0
+     
           
