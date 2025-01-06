@@ -30,9 +30,9 @@ jobs:
     - name: 'Login via Azure CLI'
       uses: azure/login@v1
       with:
-        client-id: 37d4c273-fab9-4206-870b-093535ea2157
-        tenant-id: 89a17a2e-55b6-4bad-abb8-99b5fe2ed5db
-        subscription-id: 3a6eefd3-a780-479c-b9c8-09af6abdfbaf
+        client-id: '37d4c273-fab9-4206-870b-093535ea2157'
+        tenant-id: '89a17a2e-55b6-4bad-abb8-99b5fe2ed5db'
+        subscription-id: '3a6eefd3-a780-479c-b9c8-09af6abdfbaf'
 
  
     - uses: azure/webapps-deploy@v2
