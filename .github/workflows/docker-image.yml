@@ -23,5 +23,10 @@ jobs:
     - run: |
        docker build DockerFileFolder/ -t contianerregistery.azurecr.io/myapp:latest
        docker push contianerregistery.azurecr.io/myapp:latest
+       
 
-    
+    - name: Deploy to Azure Web App
+      uses: azure/webapps-deploy@v2
+      with:
+        app-name: Appservices
+        images: contianerregistery.azurecr.io/myapp:latest
