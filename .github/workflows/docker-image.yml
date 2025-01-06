@@ -29,4 +29,7 @@ jobs:
       uses: azure/webapps-deploy@v2
       with:
         app-name: Appservices
-        images: contianerregistery.azurecr.io/myapp:latest
+        publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_6B4B801020E1455C97B2885661618C23 }}
+        package: 'contianerregistery.azurecr.io/myapp:latest'
+        
+        
